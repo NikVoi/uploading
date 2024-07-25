@@ -5,12 +5,22 @@ const useSingUp = ({ userData, updateUserData }) => {
 	const [isLoading, setIsLoading] = useState(false)
 
 	const handleSingUp = async () => {
-		const { email, password } = userData
+		const { email, password, firstName } = userData
 		setIsLoading(true)
 
 		const validateEmail = email => {
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 			return emailRegex.test(email)
+		}
+
+		if (!firstName) {
+			updateUserData({
+				typeAlert: 'Error',
+				message: 'First name is required',
+				isActive: true,
+			})
+			setIsLoading(false)
+			return
 		}
 
 		if (!validateEmail(email)) {
@@ -40,6 +50,7 @@ const useSingUp = ({ userData, updateUserData }) => {
 			updateUserData({
 				email: '',
 				password: '',
+				firstName: '',
 				typeAlert: 'Success',
 				message: 'Account registered',
 				isActive: true,

@@ -1,15 +1,15 @@
 import useSingUp from '../../hooks/auth/useSingUp'
 import useUserData from '../../hooks/auth/useUserData'
 import CustomAlert from '../CustomAlert/CustomAlert'
-import Form from '../Form/Form'
+import FormSingUp from '../FormSingUp/FormSingUp'
 import Button from '../UI/Button/Button'
 import LoaderButton from '../UI/Loader/Loader'
 import styles from './SingIn.module.scss'
 
 const SingIn = ({ setAuth }) => {
-	const setAuthPage = () => {
+	const setAuthPage = useCallback(() => {
 		setAuth('login')
-	}
+	}, [setAuth])
 
 	const [userData, updateUserData] = useUserData()
 	const { handleSingUp, isLoading } = useSingUp({
@@ -23,7 +23,7 @@ const SingIn = ({ setAuth }) => {
 
 			<h1>Sing in</h1>
 
-			<Form userData={userData} updateUserData={updateUserData} />
+			<FormSingUp userData={userData} updateUserData={updateUserData} />
 
 			<Button
 				text={isLoading ? `Process...` : 'Sing up'}

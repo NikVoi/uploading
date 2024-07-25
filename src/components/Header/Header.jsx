@@ -6,10 +6,6 @@ import styles from './Header.module.scss'
 const Header = () => {
 	const handleLogout = useLogOut()
 
-	const getAuthToken = () => {
-		return localStorage.getItem('authToken')
-	}
-
 	const email = localStorage.getItem('email')
 
 	return (

@@ -1,12 +1,12 @@
 import classNames from 'classnames'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 
 import { createPortal } from 'react-dom'
 import { IoClose } from 'react-icons/io5'
 import { getIcon } from './Config'
 import styles from './CustomAlert.module.scss'
 
-const CustomAlert = ({ data, setData }) => {
+const CustomAlert = memo(({ data, setData }) => {
 	const handleClose = () => {
 		setData({ isActive: false })
 	}
@@ -43,6 +43,6 @@ const CustomAlert = ({ data, setData }) => {
 		</section>,
 		document.body
 	)
-}
+})
 
 export default CustomAlert

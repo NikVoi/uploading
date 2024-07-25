@@ -1,7 +1,7 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import Input from '../UI/Input/Input'
 
-const Form = memo(({ userData, updateUserData }) => {
+const FormSingUp = memo(({ userData, updateUserData }) => {
 	const handleInputChange = event => {
 		const { name, value } = event.target
 		updateUserData({ [name]: value })
@@ -9,6 +9,22 @@ const Form = memo(({ userData, updateUserData }) => {
 
 	return (
 		<section>
+			<Input
+				label={'First name'}
+				name='firstName'
+				value={userData.firstName}
+				onChange={handleInputChange}
+				placeholder={'Enter your first name'}
+			/>
+
+			<Input
+				label={'User name'}
+				name='userName'
+				value={userData.userName}
+				onChange={handleInputChange}
+				placeholder={'Enter your name'}
+			/>
+
 			<Input
 				label={'Email'}
 				name='email'
@@ -29,4 +45,4 @@ const Form = memo(({ userData, updateUserData }) => {
 	)
 })
 
-export default Form
+export default FormSingUp

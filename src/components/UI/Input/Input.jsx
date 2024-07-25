@@ -1,3 +1,4 @@
+import React, { memo } from 'react'
 import styles from './Input.module.scss'
 
 const Input = ({
@@ -24,4 +25,4 @@ const Input = ({
 	)
 }
 
-export default Input
+export default memo(Input)
