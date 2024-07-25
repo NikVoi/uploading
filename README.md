@@ -1,8 +1,31 @@
-# React + Vite
+# React + Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Этот проект использует **Vite.js** для быстрой сборки и разработки, с использованием современных технологий и библиотек.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Использованные технологии
+
+- **JavaScript**
+- **React**
+- **TailwindCSS**
+- **Sass**
+- **API** (заглушка)
+- **Yarn**
+
+## Библиотеки для разработки
+
+- **Axios** — для работы с HTTP-запросами
+- **React Router DOM** — для удобной навигации по сайту
+- **React Icons** — для удобного использования иконок
+
+## Возможности улучшения
+
+- **Оптимизация производительности** — для повышения скорости загрузки сайта
+- **Декомпозиция кода** — вынести значения в константы и использовать их для лучшей читаемости
+- **Безопасное хранение токенов** — использовать cookies для хранения токенов
+- **Разделение логических файлов** — вынести функции в утилиты или помощники для лучшей структуры
+
+## Что можно было бы использовать
+
+- **Redux** — для более удобного управления состоянием и передачи данных между компонентами
