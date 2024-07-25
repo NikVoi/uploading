@@ -1,0 +1,7 @@
+.auth {
+	@apply flex w-full h-full justify-center items-center text-3xl bg-zinc-900 text-white;
+}
+
+.forms {
+	@apply flex flex-col items-center justify-between rounded-xl w-100;
+}

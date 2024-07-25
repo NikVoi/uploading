@@ -1,0 +1,41 @@
+.uploads {
+	@apply flex justify-center items-center;
+}
+
+.item {
+	@apply border-solid border-2 rounded-xl border-gray-500 p-10 first:mr-10 last:p-0 last:border-0;
+
+	& > h2 {
+		@apply text-4xl mb-10;
+	}
+
+	& > *:nth-child(2) {
+		@apply mb-10;
+	}
+
+	& > button {
+		@apply text-3xl;
+	}
+}
+
+.video {
+	@apply w-100;
+}
+
+@media (max-width: 992px) {
+	.uploads {
+		@apply flex-col justify-center items-center;
+	}
+
+	.item {
+		@apply p-5 first:mr-0 first:mb-10 first:w-96;
+
+		& > h2 {
+			@apply text-3xl;
+		}
+	}
+
+	.video {
+		@apply w-96;
+	}
+}

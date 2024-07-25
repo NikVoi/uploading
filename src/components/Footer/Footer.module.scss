@@ -1,0 +1,23 @@
+.footer {
+	@apply flex justify-between p-5 text-2xl border-t-2 border-solid border-white border-opacity-70;
+}
+
+.links {
+	@apply flex;
+
+	& > h3 {
+		@apply first:mr-5 hover:underline cursor-pointer;
+	}
+}
+
+@media (max-width: 992px) {
+	.footer {
+		@apply text-xl;
+	}
+
+	.links {
+		& > h3 {
+			@apply first:mr-4;
+		}
+	}
+}

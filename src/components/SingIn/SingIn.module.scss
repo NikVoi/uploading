@@ -1,0 +1,15 @@
+.singIn {
+	@apply w-100;
+}
+
+h1 {
+	@apply mb-10 text-4xl text-center font-bold uppercase;
+}
+
+h4 {
+	@apply mt-6 text-center;
+}
+
+.link {
+	@apply text-blue-600 cursor-pointer;
+}

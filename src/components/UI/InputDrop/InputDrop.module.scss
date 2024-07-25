@@ -1,0 +1,39 @@
+.inputDrop {
+	&.dragActive {
+		@apply bg-zinc-800 border-white;
+	}
+}
+.wrapper {
+	@apply relative flex gap-3 flex-col justify-center items-center p-5 h-30 rounded-xl border-2 border-dashed border-zinc-600 cursor-pointer;
+
+	& svg {
+		@apply size-16;
+	}
+
+	transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.wrapper:hover,
+.wrapper.drag-active {
+	@apply bg-zinc-800 border-white;
+}
+
+.title {
+	@apply text-white text-2xl text-center;
+}
+
+input[type='file'] {
+	display: none;
+}
+
+@media (max-width: 992px) {
+	.wrapper {
+		@apply gap-3 p-5 h-52 rounded-xl border-2 border-dashed border-zinc-600 cursor-pointer;
+
+		& svg {
+			@apply size-16;
+		}
+
+		transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+	}
+}
