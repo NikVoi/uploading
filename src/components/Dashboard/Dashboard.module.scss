@@ -1,3 +1,6 @@
 .dashboard {
 	@apply flex flex-col justify-between w-full h-full bg-zinc-900 text-white;
+	overflow: hidden;
+	height: 100vh;
+	position: relative;
 }
