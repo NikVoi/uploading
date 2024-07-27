@@ -1,5 +1,5 @@
 .uploads {
-	@apply flex justify-center items-center;
+	@apply flex justify-center items-center flex-auto py-20;
 }
 
 .item {
@@ -19,7 +19,7 @@
 }
 
 .video {
-	@apply w-100;
+	@apply w-100 h-52;
 }
 
 @media (max-width: 992px) {
