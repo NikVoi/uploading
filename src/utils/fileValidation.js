@@ -1,13 +1,28 @@
 const validFileTypes = [
 	'video/mp4',
-	'video/MKV',
 	'video/mkv',
 	'video/webm',
+	'video/avi',
+	'video/mov',
+	'video/wmv',
+	'video/flv',
+	'video/mpeg',
+	'video/3gp',
+	'video/ogg',
+	'video/quicktime',
+
 	'audio/mpeg',
 	'audio/wav',
 	'audio/ogg',
 	'audio/mp3',
+	'audio/aac',
+	'audio/flac',
+	'audio/alac',
+	'audio/m4a',
+	'audio/wma',
+	'audio/amr',
 ]
+
 const maxSizeInBytes = 50 * 1024 * 1024 // 50MB
 
 export const validateFileType = file => {

@@ -1,6 +1,5 @@
 .modal {
 	@apply w-100 absolute bottom-10 right-10 rounded-2xl bg-zinc-800 py-8 px-10 overflow-hidden text-white;
-
 	transform: translateX(calc(100% + 30px));
 	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
 

@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import useSingUp from '../../hooks/auth/useSingUp'
 import useUserData from '../../hooks/auth/useUserData'
 import CustomAlert from '../CustomAlert/CustomAlert'

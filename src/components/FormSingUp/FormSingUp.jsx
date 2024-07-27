@@ -18,14 +18,6 @@ const FormSingUp = memo(({ userData, updateUserData }) => {
 			/>
 
 			<Input
-				label={'User name'}
-				name='userName'
-				value={userData.userName}
-				onChange={handleInputChange}
-				placeholder={'Enter your name'}
-			/>
-
-			<Input
 				label={'Email'}
 				name='email'
 				value={userData.email}

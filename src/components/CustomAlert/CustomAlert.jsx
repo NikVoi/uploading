@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import { memo, useEffect } from 'react'
-
 import { createPortal } from 'react-dom'
 import { IoClose } from 'react-icons/io5'
 import { getIcon } from './Config'
@@ -19,11 +18,11 @@ const CustomAlert = memo(({ data, setData }) => {
 
 			return () => clearTimeout(timer)
 		}
-	}, [data.isActive])
+	}, [data.isActive, setData])
 
 	return createPortal(
 		<section
-			className={classNames(styles.modal, data.isActive && styles.active)}
+			className={classNames(styles.modal, { [styles.active]: data.isActive })}
 		>
 			<div className={styles.content}>
 				<i className={styles.info}>{getIcon(data.typeAlert)}</i>
@@ -38,7 +37,9 @@ const CustomAlert = memo(({ data, setData }) => {
 			</i>
 
 			<div
-				className={classNames(styles.progress, data.isActive && styles.active)}
+				className={classNames(styles.progress, {
+					[styles.active]: data.isActive,
+				})}
 			></div>
 		</section>,
 		document.body
