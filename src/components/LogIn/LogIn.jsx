@@ -1,6 +1,6 @@
+import useLogIn from '@/hooks/auth/useLogIn'
+import useUserData from '@hooks/auth/useUserData'
 import { useCallback } from 'react'
-import useLogIn from '../../hooks/auth/useLogIn'
-import useUserData from '../../hooks/auth/useUserData'
 import CustomAlert from '../CustomAlert/CustomAlert'
 import Form from '../Form/Form'
 import Button from '../UI/Button/Button'

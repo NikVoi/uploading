@@ -1,9 +1,8 @@
+import useLogOut from '@/hooks/auth/useLogOut'
 import { IoCloudUploadSharp } from 'react-icons/io5'
-import useLogOut from '../../hooks/auth/useLogOut'
-import Button from '../UI/Button/Button'
 import styles from './Header.module.scss'
 
-const Header = () => {
+const HeaderAuth = () => {
 	const handleLogout = useLogOut()
 
 	const email = localStorage.getItem('email')
@@ -12,7 +11,7 @@ const Header = () => {
 		<section className={styles.header}>
 			<h className={styles.logo}>
 				<IoCloudUploadSharp />
-				<span>Uploaders</span>
+				<span>Transcribe</span>
 			</h>
 			<div className={styles.wrapper}>
 				<h2>{email}</h2>
@@ -23,4 +22,4 @@ const Header = () => {
 	)
 }
 
-export default Header
+export default HeaderAuth

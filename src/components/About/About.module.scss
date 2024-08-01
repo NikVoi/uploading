@@ -1,0 +1,65 @@
+.about {
+	@apply w-full flex justify-between text-center pt-52 px-20 border-b border-solid border-black border-opacity-20 mb-30;
+}
+
+.info {
+	@apply flex flex-col justify-evenly w-1/2 text-left mr-12;
+
+	& h2 {
+		@apply text-7xl font-bold mb-3;
+	}
+
+	& h3 {
+		@apply text-4xl opacity-50 w-10/12;
+	}
+}
+
+.image {
+	@apply w-1/2 h-100 overflow-hidden rounded-3xl;
+
+	& img {
+		@apply w-full h-full object-cover;
+	}
+}
+
+.buttons {
+	@apply flex justify-between w-5/12;
+
+	& button {
+		@apply first:mr-6 first:font-bold last:bg-white last:border last:border-solid last:border-gray-400 last:text-black last:hover:bg-gray-100;
+	}
+}
+
+@media (max-width: 992px) {
+	.about {
+		@apply flex-col items-center w-full pt-28 px-10 border-b border-solid border-black border-opacity-20 mb-16;
+	}
+
+	.info {
+		@apply w-full mr-0;
+
+		& h2 {
+			@apply text-6xl mb-3;
+		}
+
+		& h3 {
+			@apply text-3xl w-full mb-10;
+		}
+	}
+
+	.image {
+		@apply w-full h-96 overflow-hidden rounded-3xl;
+
+		& img {
+			@apply w-full h-full object-cover;
+		}
+	}
+
+	.buttons {
+		@apply flex justify-between w-3/4 mb-12;
+
+		& button {
+			@apply first:px-5;
+		}
+	}
+}

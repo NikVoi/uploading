@@ -1,0 +1,91 @@
+.price {
+	@apply bg-gray-100 px-20 text-center py-32;
+
+	& > h2 {
+		@apply text-6xl font-bold mb-6;
+	}
+
+	& > h3 {
+		@apply text-3xl opacity-50 mb-6;
+	}
+}
+
+.wrapper {
+	@apply flex flex-col items-center w-full;
+
+	& .item {
+		@apply p-8 w-1/2 bg-white border border-solid border-black border-opacity-20 rounded-2xl mb-6;
+	}
+
+	& .title {
+		@apply text-5xl font-bold mb-4;
+	}
+
+	& .description {
+		@apply text-2xl opacity-50 mb-10;
+	}
+
+	& .priceItem {
+		@apply text-5xl font-bold mb-10;
+	}
+
+	& .options {
+		@apply relative flex flex-col items-center justify-center mb-10;
+	}
+
+	.option {
+		@apply flex  text-xl opacity-50 mb-4;
+
+		& svg {
+			@apply mt-0.5 mr-2;
+		}
+	}
+
+	& button {
+		@apply w-44 px-2 font-bold;
+	}
+}
+
+@media (max-width: 992px) {
+	.price {
+		@apply bg-gray-100 px-10 text-center py-16;
+
+		& > h2 {
+			@apply text-5xl;
+		}
+
+		& > h3 {
+			@apply text-2xl;
+		}
+	}
+
+	.wrapper {
+		& .item {
+			@apply p-8 w-full bg-white border border-solid border-black border-opacity-20 rounded-2xl mb-6;
+		}
+
+		& .title {
+			@apply text-4xl;
+		}
+
+		& .description {
+			@apply text-xl;
+		}
+
+		& .priceItem {
+			@apply text-4xl;
+		}
+
+		& .options {
+			@apply relative flex flex-col items-center justify-center mb-10;
+		}
+
+		.option {
+			@apply flex text-xl opacity-50 mb-4;
+		}
+
+		& button {
+			@apply w-44 px-2 font-bold;
+		}
+	}
+}

@@ -9,8 +9,6 @@
 	& svg {
 		@apply size-16;
 	}
-
-	transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .wrapper:hover,
@@ -33,7 +31,5 @@ input[type='file'] {
 		& svg {
 			@apply size-16;
 		}
-
-		transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 	}
 }
