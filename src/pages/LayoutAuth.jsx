@@ -1,15 +1,15 @@
 import Footer from '@/components/Footer/Footer'
 import HeaderAuth from '@/components/Header/HeaderAuth'
 
-const LayoutAuth = () => {
+const LayoutAuth = ({ children }) => {
 	return (
-		<section className={styles.layout}>
+		<main>
 			<HeaderAuth />
 
 			{children}
 
 			<Footer />
-		</section>
+		</main>
 	)
 }
 

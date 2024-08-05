@@ -1,0 +1,45 @@
+.getStarted {
+	@apply px-20 py-32 flex justify-between;
+}
+
+.wrapper {
+	@apply w-5/12 ml-8;
+
+	& div {
+		& input {
+			@apply bg-white text-black border border-solid border-black text-2xl border-opacity-50;
+
+			& > #file-upload-button {
+				@apply bg-none;
+			}
+
+			&::-webkit-file-upload-button {
+				@apply bg-white border-none font-bold;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.getStarted {
+		@apply px-10 py-20 flex justify-center items-center flex-col;
+	}
+
+	.wrapper {
+		@apply w-full ml-8;
+
+		& div {
+			& input {
+				@apply bg-white text-black border border-solid border-black text-2xl border-opacity-50;
+
+				& > #file-upload-button {
+					@apply bg-none;
+				}
+
+				&::-webkit-file-upload-button {
+					@apply bg-white border-none font-bold;
+				}
+			}
+		}
+	}
+}

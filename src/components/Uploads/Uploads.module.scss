@@ -1,9 +1,26 @@
 .uploads {
-	@apply flex justify-center items-center flex-auto py-20;
+	@apply mr-16 h-full border-solid border-2 rounded-xl border-gray-300;
+}
+
+.select {
+	@apply p-10;
+
+	& > div {
+		& h2 {
+			@apply text-4xl mb-1;
+		}
+		& h3 {
+			@apply text-2xl;
+		}
+	}
+
+	& button {
+		@apply bg-sky-600;
+	}
 }
 
 .item {
-	@apply border-solid border-2 rounded-xl border-gray-500 p-10 first:mr-10 last:p-0 last:border-0;
+	@apply border-solid border-2 rounded-xl border-black first:mr-10 last:p-0 last:border-0;
 
 	& > h2 {
 		@apply text-4xl mb-10;
@@ -18,13 +35,9 @@
 	}
 }
 
-.video {
-	@apply w-100 h-52;
-}
-
 @media (max-width: 992px) {
 	.uploads {
-		@apply flex-col justify-center items-center;
+		@apply flex-col justify-center items-center mr-0 mb-10 max-sm:w-full;
 	}
 
 	.item {

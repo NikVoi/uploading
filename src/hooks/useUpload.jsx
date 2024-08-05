@@ -2,10 +2,8 @@ import { useState } from 'react'
 import { uploadFile } from '../api/UploadFile'
 import { validateFileSize, validateFileType } from '../utils/fileValidation'
 
-const useUpload = () => {
-	const [isLoading, setIsLoading] = useState(false)
+const useUpload = (language, setIsLoading) => {
 	const [file, setFile] = useState(null)
-	const [preview, setPreview] = useState(null)
 	const [data, setData] = useState({})
 
 	const handleFileChange = event => {
@@ -32,8 +30,6 @@ const useUpload = () => {
 		}
 
 		setFile(selectedFile)
-		const fileUrl = URL.createObjectURL(selectedFile)
-		setPreview(fileUrl)
 	}
 
 	const handleSubmit = async event => {
@@ -47,6 +43,15 @@ const useUpload = () => {
 			return
 		}
 
+		if (!language) {
+			setData({
+				typeAlert: 'Error',
+				message: 'Please select a language.',
+				isActive: true,
+			})
+			return
+		}
+
 		setIsLoading(true)
 
 		try {
@@ -55,23 +60,22 @@ const useUpload = () => {
 			setData({
 				typeAlert: 'Success',
 				message: 'Expect the result to be sent to your email',
-				// or we can write response.success
 				isActive: true,
 			})
 
 			setFile(null)
-			setPreview(null)
 		} catch (error) {
 			console.error('Error uploading file:', error)
-		} finally {
-			setIsLoading(false)
+			setData({
+				typeAlert: 'Error',
+				message: 'Error uploading file.',
+				isActive: true,
+			})
 		}
 	}
 
 	return {
-		isLoading,
 		file,
-		preview,
 		data,
 		handleFileChange,
 		handleSubmit,

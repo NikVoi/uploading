@@ -1,0 +1,21 @@
+.title {
+	& h2 {
+		@apply text-7xl font-bold  mb-5;
+	}
+
+	& h3 {
+		@apply text-3xl opacity-50 mb-12;
+	}
+}
+
+@media (max-width: 992px) {
+	.title {
+		& h2 {
+			@apply text-6xl font-bold mb-5;
+		}
+
+		& h3 {
+			@apply text-3xl opacity-50 mb-12;
+		}
+	}
+}

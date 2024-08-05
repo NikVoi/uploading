@@ -1,3 +1,9 @@
 .dashboard {
-	@apply flex flex-col justify-between w-full h-full flex-1 bg-zinc-900 text-white;
+	@apply flex justify-center items-center w-full h-full flex-1 py-10;
+}
+
+@media (max-width: 992px) {
+	.dashboard {
+		@apply flex flex-col justify-center items-center w-full h-auto max-sm:px-10;
+	}
 }

@@ -4,7 +4,7 @@
 	}
 }
 .wrapper {
-	@apply relative flex gap-3 flex-col justify-center items-center p-5 h-30 rounded-xl border-2 border-dashed border-zinc-600 cursor-pointer;
+	@apply relative flex gap-3 flex-col justify-center items-center p-5 h-56 rounded-xl border-2 border-dashed border-gray-400 cursor-pointer mb-5;
 
 	& svg {
 		@apply size-16;
@@ -13,14 +13,14 @@
 
 .wrapper:hover,
 .wrapper.drag-active {
-	@apply bg-zinc-800 border-white;
+	@apply bg-gray-100 border-black border-opacity-50;
 }
 
 .title {
-	@apply text-white text-2xl text-center;
+	@apply text-2xl text-center;
 }
 
-input[type='file'] {
+.inputDrop > label > input[type='file'] {
 	display: none;
 }
 

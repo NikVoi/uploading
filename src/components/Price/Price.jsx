@@ -1,4 +1,7 @@
+import { AUTH_PAGE } from '@/constants/navigateConstant'
 import { IoMdCheckmark } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom'
+import Title from '../Title/Title'
 import Button from '../UI/Button/Button'
 import styles from './Price.module.scss'
 
@@ -40,12 +43,16 @@ const priceCards = [
 ]
 
 const Price = () => {
+	const navigate = useNavigate()
+
 	return (
 		<section className={styles.price}>
-			<h2>Affordable pricing for every need</h2>
-			<h3>
-				Choose the plan that fits your budget and transcription requirements.
-			</h3>
+			<Title
+				title={'Affordable pricing for every need'}
+				description={
+					'Choose the plan that fits your budget and transcription requirements'
+				}
+			/>
 
 			<div className={styles.wrapper}>
 				{priceCards.map((item, index) => (
@@ -71,7 +78,7 @@ const Price = () => {
 							))}
 						</div>
 
-						<Button text='Get started' />
+						<Button text='Get started' onClick={() => navigate(AUTH_PAGE)} />
 					</div>
 				))}
 			</div>

@@ -1,11 +1,11 @@
 .block {
-	@apply flex flex-col dark:text-white;
+	@apply flex flex-col;
 }
 
 .label {
-	@apply mb-4 text-3xl;
+	@apply mb-4 text-3xl text-black;
 }
 
 .input {
-	@apply w-full border border-solid border-white border-opacity-30 rounded-xl p-3 text-3xl bg-zinc-900 mb-6;
+	@apply w-full border border-solid border-gray-400 border-opacity-30 rounded-xl p-3 text-3xl bg-white mb-6;
 }

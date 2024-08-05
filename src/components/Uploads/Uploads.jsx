@@ -1,54 +1,55 @@
-import useUpload from '../../hooks/useUpload'
+import { useDashboardContext } from '@/context/UpadateContext'
 import CustomAlert from '../CustomAlert/CustomAlert'
+import Title from '../Title/Title'
 import Button from '../UI/Button/Button'
 import InputDrop from '../UI/InputDrop/InputDrop'
 import LoaderButton from '../UI/Loader/Loader'
+import Select from '../UI/Select/Select'
 import styles from './Uploads.module.scss'
+
+// TODO: Убрать в отдельн6ый файл
+const options = [
+	{ value: 'English', label: 'English' },
+	{ value: 'Spanish', label: 'Spanish' },
+	{ value: 'French', label: 'French' },
+	{ value: 'Germany', label: 'Germany' },
+]
 
 const Uploads = () => {
 	const {
-		isLoading,
-		file,
-		preview,
-		data,
+		setLanguage,
 		handleFileChange,
-		handleSubmit,
+		data,
 		setData,
-	} = useUpload()
+		isLoading,
+		handleSubmit,
+	} = useDashboardContext()
+
+	const handleSelect = option => {
+		setLanguage(option)
+	}
 
 	return (
 		<section className={styles.uploads}>
 			<CustomAlert data={data} setData={setData} />
 
-			<div className={styles.item}>
-				<h2>Uploads Video or audio</h2>
+			<div className={styles.select}>
+				<Title
+					title={'Convert Video to Transcript'}
+					description={'Drag and drop a video file or click to select.'}
+				/>
 
 				<InputDrop onChange={handleFileChange} />
 
+				<Select options={options} onSelect={handleSelect} />
+
 				<Button
-					text={isLoading ? `Process...` : 'Upload'}
+					text={isLoading ? `Process...` : 'Convert to Transcript'}
 					svg={isLoading ? <LoaderButton /> : ''}
 					onClick={handleSubmit}
 					disabled={isLoading}
 				/>
 			</div>
-			<>
-				{preview && (
-					<div className={styles.item}>
-						{file.type.startsWith('video') ? (
-							<video className={styles.video} controls>
-								<source src={preview} type={file.type} />
-								Your browser does not support the video tag.
-							</video>
-						) : (
-							<audio controls>
-								<source src={preview} type={file.type} />
-								Your browser does not support the audio element.
-							</audio>
-						)}
-					</div>
-				)}
-			</>
 		</section>
 	)
 }

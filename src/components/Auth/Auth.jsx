@@ -1,12 +1,13 @@
+import { AUTH_PAGE } from '@/constants/navigateConstant'
+import useNavigateAuth from '@/hooks/useNavigateAuth'
 import { useState } from 'react'
-import useNavigateAuth from '../../hooks/useNavigateAuth'
 import LogIn from '../LogIn/LogIn'
 import SingIn from '../SingIn/SingIn'
 import styles from './Auth.module.scss'
 
 const Auth = () => {
 	const [auth, setAuth] = useState('login')
-	useNavigateAuth()
+	useNavigateAuth('', AUTH_PAGE)
 
 	return (
 		<section className={styles.auth}>

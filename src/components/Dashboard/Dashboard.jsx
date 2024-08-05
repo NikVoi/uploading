@@ -1,5 +1,6 @@
+import { DashboardProvider } from '@/context/UpadateContext'
 import useNavigateAuth from '../../hooks/useNavigateAuth'
-import Footer from '../Footer/Footer'
+import Transcript from '../Transcript/Transcript'
 import Uploads from '../Uploads/Uploads'
 import styles from './Dashboard.module.scss'
 
@@ -7,11 +8,13 @@ const Dashboard = () => {
 	useNavigateAuth()
 
 	return (
-		<section className={styles.dashboard}>
-			<Uploads />
+		<DashboardProvider>
+			<section className={styles.dashboard}>
+				<Uploads />
 
-			<Footer />
-		</section>
+				<Transcript />
+			</section>
+		</DashboardProvider>
 	)
 }
 

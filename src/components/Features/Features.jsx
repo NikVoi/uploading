@@ -1,3 +1,4 @@
+import Title from '../Title/Title'
 import styles from './Features.module.scss'
 
 const key_Features = [
@@ -38,12 +39,12 @@ const Features = () => {
 		<section className={styles.features}>
 			<h4>Key Features</h4>
 
-			<h2>Powerful transcription tools</h2>
-
-			<h3>
-				Our AI-powered transcription engine delivers accurate, searchable text
-				from your videos in minutes.
-			</h3>
+			<Title
+				title={'Powerful transcription tools'}
+				description={
+					'Our AI-powered transcription engine delivers accurate, searchable text from your videos in minutes.'
+				}
+			/>
 
 			<div className={styles.wrapper}>
 				{key_Features.map(item => (

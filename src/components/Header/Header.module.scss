@@ -1,5 +1,5 @@
-.header {
-	@apply flex justify-between p-5 text-2xl border-b-2 border-solid border-white border-opacity-70;
+.headerAuth {
+	@apply flex justify-between p-5 text-2xl border-b-2 border-solid border-white border-opacity-70 bg-white text-black;
 }
 
 .headerNotAuth {
@@ -7,7 +7,7 @@
 }
 
 .logo {
-	@apply flex justify-between items-center text-4xl font-bold;
+	@apply flex justify-between items-center text-4xl font-bold cursor-pointer;
 
 	& > svg {
 		@apply w-16 h-full mr-5;
