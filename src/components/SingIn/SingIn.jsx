@@ -1,3 +1,10 @@
+import { AUTH_TEXT_2 } from '@/constants/Auth/authConstant'
+import {
+	LOG_IN,
+	LOGIN,
+	PROCESS,
+	SING_IN_UPPER,
+} from '@/constants/stringConstant'
 import { useCallback } from 'react'
 import useSingUp from '../../hooks/auth/useSingUp'
 import useUserData from '../../hooks/auth/useUserData'
@@ -9,7 +16,7 @@ import styles from './SingIn.module.scss'
 
 const SingIn = ({ setAuth }) => {
 	const setAuthPage = useCallback(() => {
-		setAuth('login')
+		setAuth(LOGIN)
 	}, [setAuth])
 
 	const [userData, updateUserData] = useUserData()
@@ -22,21 +29,21 @@ const SingIn = ({ setAuth }) => {
 		<section className={styles.singIn}>
 			<CustomAlert data={userData} setData={updateUserData} />
 
-			<h1>Sing in</h1>
+			<h1>{SING_IN_UPPER}</h1>
 
 			<FormSingUp userData={userData} updateUserData={updateUserData} />
 
 			<Button
-				text={isLoading ? `Process...` : 'Sing up'}
+				text={isLoading ? `${PROCESS}` : `${SING_IN_UPPER}`}
 				svg={isLoading ? <LoaderButton /> : ''}
 				onClick={handleSingUp}
 				disabled={isLoading}
 			/>
 
 			<h4>
-				Have account?{' '}
+				{AUTH_TEXT_2}{' '}
 				<span className={styles.link} onClick={setAuthPage}>
-					Log in
+					{LOG_IN}
 				</span>
 			</h4>
 		</section>

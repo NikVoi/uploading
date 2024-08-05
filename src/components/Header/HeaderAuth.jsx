@@ -1,4 +1,5 @@
 import { DASHBOARD_PAGE } from '@/constants/navigateConstant'
+import { LOG_OUT } from '@/constants/stringConstant'
 import useLogOut from '@/hooks/auth/useLogOut'
 import { IoVideocamOutline } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'
@@ -20,7 +21,7 @@ const HeaderAuth = () => {
 			<div className={styles.wrapper}>
 				<h2>{email}</h2>
 
-				<Button text={'Logout'} onClick={handleLogout} />
+				<Button text={LOG_OUT} onClick={handleLogout} />
 			</div>
 		</section>
 	)

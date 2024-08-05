@@ -1,4 +1,6 @@
-export const downloadAsText = () => {
+import jsPDF from 'jspdf'
+
+export const downloadAsText = displayedText => {
 	const element = document.createElement('a')
 	const file = new Blob([displayedText], { type: 'text/plain' })
 	element.href = URL.createObjectURL(file)
@@ -8,7 +10,7 @@ export const downloadAsText = () => {
 	document.body.removeChild(element)
 }
 
-export const downloadAsPDF = () => {
+export const downloadAsPDF = displayedText => {
 	const doc = new jsPDF()
 	const margin = 10
 	const pageWidth = doc.internal.pageSize.getWidth() - 2 * margin

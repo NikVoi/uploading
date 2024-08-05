@@ -1,3 +1,9 @@
+import {
+	UPLOAD_BUTTON,
+	UPLOAD_DESCRIPTION,
+	UPLOAD_TITLE,
+} from '@/constants/Dashboard/uploadConstant'
+import { PROCESS } from '@/constants/stringConstant'
 import { useDashboardContext } from '@/context/UpadateContext'
 import CustomAlert from '../CustomAlert/CustomAlert'
 import Title from '../Title/Title'
@@ -34,17 +40,14 @@ const Uploads = () => {
 			<CustomAlert data={data} setData={setData} />
 
 			<div className={styles.select}>
-				<Title
-					title={'Convert Video to Transcript'}
-					description={'Drag and drop a video file or click to select.'}
-				/>
+				<Title title={UPLOAD_TITLE} description={UPLOAD_DESCRIPTION} />
 
 				<InputDrop onChange={handleFileChange} />
 
 				<Select options={options} onSelect={handleSelect} />
 
 				<Button
-					text={isLoading ? `Process...` : 'Convert to Transcript'}
+					text={isLoading ? `${PROCESS}` : `${UPLOAD_BUTTON}`}
 					svg={isLoading ? <LoaderButton /> : ''}
 					onClick={handleSubmit}
 					disabled={isLoading}

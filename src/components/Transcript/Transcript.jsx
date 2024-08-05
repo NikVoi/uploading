@@ -1,3 +1,9 @@
+import {
+	TRANSCRIPT_BUTTON_PDF,
+	TRANSCRIPT_BUTTON_TEXT,
+	TRANSCRIPT_DESCRIPTION,
+	TRANSCRIPT_TITLE,
+} from '@/constants/Dashboard/transcriptConstant'
 import { useDashboardContext } from '@/context/UpadateContext'
 import { downloadAsPDF, downloadAsText } from '@/utils/DownlodFile'
 import { IoLanguage } from 'react-icons/io5'
@@ -11,10 +17,7 @@ const Transcript = () => {
 
 	return (
 		<section className={styles.transcript}>
-			<Title
-				title={'Transcript Preview'}
-				description={'Your transcript will be displayed here.'}
-			/>
+			<Title title={TRANSCRIPT_TITLE} description={TRANSCRIPT_DESCRIPTION} />
 
 			{isLoading && (
 				<>
@@ -25,7 +28,7 @@ const Transcript = () => {
 
 					<div className={styles.time}>
 						<MdAccessTime />
-						<span>{timeLeft} seconds left</span>
+						<span>{timeLeft} </span>
 					</div>
 
 					<div className={styles.loader}>
@@ -36,18 +39,20 @@ const Transcript = () => {
 
 			<div className={styles.preview}>{displayedText}</div>
 
-			<div className={styles.wrapper}>
-				<Button
-					text={'Download as Text'}
-					onClick={downloadAsText}
-					disabled={isLoading}
-				/>
-				<Button
-					text={'Download as PDF'}
-					onClick={downloadAsPDF}
-					disabled={isLoading}
-				/>
-			</div>
+			{displayedText && (
+				<div className={styles.wrapper}>
+					<Button
+						text={TRANSCRIPT_BUTTON_TEXT}
+						onClick={() => downloadAsText(displayedText)}
+						disabled={isLoading}
+					/>
+					<Button
+						text={TRANSCRIPT_BUTTON_PDF}
+						onClick={() => downloadAsPDF(displayedText)}
+						disabled={isLoading}
+					/>
+				</div>
+			)}
 		</section>
 	)
 }

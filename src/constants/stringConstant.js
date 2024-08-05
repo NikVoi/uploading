@@ -1,0 +1,7 @@
+export const LOGIN = 'login'
+export const LOG_IN = 'log in'
+export const SING_IN = 'signin'
+export const SING_IN_UPPER = 'Sign in'
+export const SING_UP = 'Sign up'
+export const PROCESS = 'Process...'
+export const LOG_OUT = 'logout'

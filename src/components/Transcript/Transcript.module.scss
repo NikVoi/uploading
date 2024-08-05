@@ -43,6 +43,10 @@
 	}
 }
 
+.preview::-webkit-scrollbar {
+	width: 0;
+}
+
 @media (max-width: 992px) {
 	.transcript {
 		@apply flex flex-col justify-between border-solid border-2 rounded-xl border-gray-300 p-10 max-sm:w-full;

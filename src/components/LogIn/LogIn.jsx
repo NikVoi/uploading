@@ -1,3 +1,5 @@
+import { AUTH_TEXT } from '@/constants/Auth/authConstant'
+import { LOG_IN, PROCESS, SING_IN, SING_UP } from '@/constants/stringConstant'
 import useLogIn from '@/hooks/auth/useLogIn'
 import useUserData from '@hooks/auth/useUserData'
 import { useCallback } from 'react'
@@ -9,7 +11,7 @@ import styles from './LogIn.module.scss'
 
 const LogIn = ({ setAuth }) => {
 	const setAuthPage = useCallback(() => {
-		setAuth('signin')
+		setAuth(SING_IN)
 	}, [setAuth])
 
 	const [userData, updateUserData] = useUserData()
@@ -27,16 +29,16 @@ const LogIn = ({ setAuth }) => {
 			<Form userData={userData} updateUserData={updateUserData} />
 
 			<Button
-				text={isLoading ? `Process...` : 'Log in'}
+				text={isLoading ? PROCESS : LOG_IN}
 				svg={isLoading ? <LoaderButton /> : ''}
 				onClick={handleLogin}
 				disabled={isLoading}
 			/>
 
 			<h4>
-				Don't have an account?{' '}
+				{AUTH_TEXT}{' '}
 				<span className={styles.link} onClick={setAuthPage}>
-					Sign up
+					{SING_UP}
 				</span>
 			</h4>
 		</section>

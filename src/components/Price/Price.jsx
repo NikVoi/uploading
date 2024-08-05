@@ -1,3 +1,11 @@
+import {
+	PRICE_BUTTON,
+	PRICE_CARDS,
+	PRICE_CUSTOM,
+	PRICE_CUSTOM_PRICE,
+	PRICE_DESCRIPTION,
+	PRICE_TITLE,
+} from '@/constants/Home/PriceConstant'
 import { AUTH_PAGE } from '@/constants/navigateConstant'
 import { IoMdCheckmark } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
@@ -5,64 +13,22 @@ import Title from '../Title/Title'
 import Button from '../UI/Button/Button'
 import styles from './Price.module.scss'
 
-const priceCards = [
-	{
-		title: 'Starter',
-		description: 'Perfect for individuals and small teams.',
-		price: 9,
-		list: [
-			'100 minutes of transcription per month',
-			'Searchable transcripts',
-			'Multiple output formats',
-			'Basic team collaboration',
-		],
-	},
-	{
-		title: 'Pro',
-		description: 'For teams and businesses with higher volume needs.',
-		price: 49,
-		list: [
-			'1,000 minutes of transcription per month',
-			'Searchable transcripts',
-			'Multiple output formats',
-			'Advanced team collaboration',
-			'Enterprise-grade security and reliability',
-		],
-	},
-	{
-		title: 'Enterprise',
-		description: 'Tailored solutions for large organizations.',
-		price: 'Custom',
-		list: [
-			'Unlimited transcription volume',
-			'Customizable workflows and integrations',
-			'Advanced team management and controls',
-			'Dedicated support and SLAs',
-		],
-	},
-]
-
 const Price = () => {
 	const navigate = useNavigate()
 
 	return (
 		<section className={styles.price}>
-			<Title
-				title={'Affordable pricing for every need'}
-				description={
-					'Choose the plan that fits your budget and transcription requirements'
-				}
-			/>
+			<Title title={PRICE_TITLE} description={PRICE_DESCRIPTION} />
 
 			<div className={styles.wrapper}>
-				{priceCards.map((item, index) => (
+				{PRICE_CARDS.map((item, index) => (
 					<div key={index} className={styles.item}>
 						<div className={styles.title}>{item.title}</div>
 						<div className={styles.description}>{item.description}</div>
 
 						<div className={styles.priceItem}>
-							{item.price === 'Custom' ? (
-								'Custom Pricing'
+							{item.price === `${PRICE_CUSTOM}` ? (
+								`${PRICE_CUSTOM_PRICE}`
 							) : (
 								<>
 									${item.price} <span>/ month</span>
@@ -78,7 +44,7 @@ const Price = () => {
 							))}
 						</div>
 
-						<Button text='Get started' onClick={() => navigate(AUTH_PAGE)} />
+						<Button text={PRICE_BUTTON} onClick={() => navigate(AUTH_PAGE)} />
 					</div>
 				))}
 			</div>
