@@ -1,18 +1,18 @@
 export const HEADER_LINKS = [
 	{
-		link: '',
+		link: '/',
 		name: 'Features',
 	},
 	{
-		link: '',
+		link: '/',
 		name: 'Pricing',
 	},
 	{
-		link: '',
+		link: '/',
 		name: 'About',
 	},
 	{
-		link: '',
+		link: '/',
 		name: 'Contact',
 	},
 ]

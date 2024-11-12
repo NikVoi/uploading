@@ -15,7 +15,7 @@ const HeaderNotAuth = () => {
 
 			<div className={styles.wrapper}>
 				{HEADER_LINKS.map(item => (
-					<a href={item.link} onClick={() => navigate(AUTH_PAGE)}>
+					<a key={item.name} onClick={() => navigate(AUTH_PAGE)}>
 						{item.name}
 					</a>
 				))}
